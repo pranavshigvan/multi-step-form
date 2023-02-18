@@ -1,0 +1,472 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "ubuntu bold";
+    src: url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ubuntu medium";
+    src: url("../fonts/Ubuntu-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "ubuntu regular";
+    src: url("../fonts/Ubuntu-Regular.ttf") format("truetype");
+}
+html {
+    font-size: 16px;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: hsl(217, 100%, 97%);
+    font-family: "ubuntu regular";
+
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar {
+    display: flex;
+    justify-content: center;
+    padding: 25px 25px 100px;
+    background-image: url(../images/bg-sidebar-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sidebar .step {
+    cursor: pointer;
+}
+.sidebar .step_number{
+    display: none;
+}
+.sidebar .number {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin:7px;
+    border: 1px solid hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+    padding: 7px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    transition: all .5s ease; 
+}
+.number.active {
+    background-color: hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+    border: none;
+}
+.main_container {
+    padding: 0 15px;
+    flex-grow: 1;
+    position: relative;
+}
+.page{
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    transform: translateY(-15%);
+    max-height: 450px;
+}
+.heading{
+    margin-bottom: 30px;
+}
+.title {
+    color: hsl(213, 96%, 18%);
+    font-size: 25px;
+    margin-bottom: 5px;
+    font-family: "ubuntu bold";
+}
+.title_description {
+    color: hsl(231, 11%, 63%);
+}
+.input_container{
+    position: relative;
+    margin-bottom: 10px;
+}
+.label {
+    color: hsl(213, 96%, 18%);
+    font-size: 14px;
+}
+.input_container input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid hsl(231, 11%, 63%);
+    color: hsl(213, 96%, 18%);
+}
+.input_container input:hover,.input_container input:focus {
+    border-color: hsl(213, 96%, 18%);
+}
+.input_container input::placeholder {
+    color: hsl(231, 11%, 63%);
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding:15px;
+    background-color: white;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;   
+}
+.buttons button {
+    border: none;
+    outline: none;
+    font-family: 'ubuntu medium';
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.buttons .back {
+    background-color: transparent;
+    color: hsl(231, 11%, 63%);
+    visibility: hidden;
+}
+.buttons .next {
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    border-radius: 5px;
+}
+.buttons .next:hover {
+    background-color: hsl(243, 100%, 62%);
+}
+.confirm {
+    background-color: hsl(243, 100%, 62%);
+    color: white;
+    border-radius: 5px;
+}
+.confirm:hover {
+    background-color: hsl(228, 100%, 84%);
+}
+.back:hover {
+    color: hsl(213, 96%, 18%);
+}
+.plans {
+    margin-bottom: 30px;
+}
+.plan {
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 5px;
+    padding: 15px;
+    min-width: 100px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.plan:hover{
+    border-color: hsl(213, 96%, 18%);
+}
+.plan input {
+    appearance: none;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}
+.plan input:checked {
+    background-color: hsl(217, 100%, 97%);
+    border: 1px solid hsl(213, 96%, 18%);
+    border-radius: 5px;
+}
+.plan img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.plan h4,.info h4 {
+    font-size: 14px;
+    color: hsl(213, 96%, 18%);
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+.plan p,.info p {
+    color: hsl(231, 11%, 63%);
+    font-size: 14px;
+}
+.plan_type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: hsl(231, 100%, 99%);
+}
+.plan_type p {
+    color: hsl(231, 11%, 63%);
+}
+.plan_type .highlight {
+    color: hsl(213, 96%, 18%);
+}
+.toggler {
+    height: 21px;
+    width: 36px;
+    border-radius: 10px;
+    background-color: hsl(213, 96%, 18%);
+    margin: 0 10px;
+    position: relative;
+    cursor: pointer;
+}
+.toggle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+.toggler input {
+    visibility: hidden;
+}
+.toggler input:checked + .toggle {
+    right: 2px;
+    left: auto;
+}
+.tooltip {
+    font-size: 12px;
+    color: hsl(213, 96%, 18%);
+    display: none;
+}
+.show {
+    display: inline;
+}
+.add_on {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid hsl(231, 11%, 63%);
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 5px;
+}
+.add_on:hover {
+    border: 1px solid hsl(243, 100%, 62%);
+}
+.info {
+    display: flex;
+    align-items: center;
+}
+.info input {
+    margin-right: 20px;
+    transform: scale(1.5);
+}
+.info input:checked + .background {
+    background-color: hsl(217, 100%, 97%);
+    border: 1px solid hsl(243, 100%, 62%);
+}
+.rate {
+    color: hsl(243, 100%, 62%);
+    font-size: 14px;
+}
+.thanks_page {
+    display: grid;
+    place-items: center;
+    padding: 50px;
+    display: none;
+}
+.thanks_page > div {
+    text-align: center;
+    max-width: 450px;
+}
+.thanks_page h1 {
+    font-size: 27px;
+    margin: 20px;
+    color: hsl(213, 96%, 18%);
+}
+.thanks_page p {
+    color: hsl(231, 11%, 63%);
+}
+/* #personal_info {
+    display: none;
+} */
+#plans {
+    display: none;
+}
+#add_ons {
+    display: none;
+}
+#summury {
+    display: none;
+}
+.summury {
+    padding: 15px;
+    background-color: hsl(217, 100%, 97%);
+    border-radius: 5px;
+}
+.plan_summury {
+    display: flex;
+    justify-content: space-between;
+}
+.plan_summury  button {
+    background-color: transparent;
+    color: hsl(231, 11%, 63%);
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+}
+.plan_summury  button:hover{
+    color: hsl(243, 100%, 62%);
+}
+.summury hr {
+    margin-block: 10px;
+}
+.plan_summury h5 {
+    font-size: 14px;
+    color: hsl(213, 96%, 18%);
+}
+.plan_summury p{
+    color: hsl(213, 96%, 18%);
+    font-size: 14px;
+    font-weight: 600;
+}
+.selected_addon {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 15px;
+}
+.addon_name ,.total p{
+    color: hsl(231, 11%, 63%);
+    font-size: 14px;
+}
+.selected_addon h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 15px;
+}
+.total h4 {
+    color: hsl(243, 100%, 62%);
+}
+@media (min-width:600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        width: auto;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: hsl(0, 0%, 100%);
+        max-width: 850px;
+        min-width: 600;
+        height: 500px;
+        display: flex;
+        flex-direction: row;
+    }
+    .sidebar {
+        background-image: url(../images/bg-sidebar-desktop.svg);
+        flex-direction: column;
+        padding: 20px 20px 100px;
+        width: 230px;
+        max-width: 230px;
+        height: 470px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border-radius: 10px;
+        flex-shrink: 0;
+
+    }
+    .sidebar .step {
+        margin-bottom: 10px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }
+    .sidebar .step_number{
+        display: block;
+        margin-left: 10px;
+    }
+    .sidebar .number {
+        width: 25px;
+        height: 25px;
+        margin:5px;
+    }
+    .h6 {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: hsl(229, 24%, 87%);
+        margin-bottom: 3px;
+    }
+    .h4 {
+        color: hsl(231, 100%, 99%);
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: "ubuntu medium";
+    }
+    .main_container {
+        padding: 25px 50px;
+    }
+    .page {
+        transform: translateY(0%);
+        padding: 0;
+    }
+    .buttons {
+        padding: 15px 50px;
+    }
+    .plans {
+        display: flex;
+        justify-content: space-between;
+    }
+    .plan {
+        flex-direction: column;
+        align-items: start;
+        
+    }
+    .plan img {
+        width: 30px;
+        margin-bottom: 30px; 
+    }
+}
+
+
+
+
+
+.colors {
+    color: hsl(213, 96%, 18%);
+    color: hsl(243, 100%, 62%);
+    color: hsl(228, 100%, 84%);
+    color: hsl(206, 94%, 87%);
+    color: hsl(354, 84%, 57%);
+
+    color: hsl(231, 11%, 63%);
+    color: hsl(229, 24%, 87%);
+    color: hsl(217, 100%, 97%);
+    color: hsl(231, 100%, 99%);
+    color: hsl(0, 0%, 100%);
+
+}

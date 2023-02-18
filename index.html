@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="src/styles/index.css">
+  <title>Multi-step form</title>
+
+</head>
+<body>
+  <section class="container">
+    <!-- Sidebar start -->
+    <aside class="sidebar">
+      <div class="step">
+        <span class="number active" id="step1">1</span>
+        <div class="step_number">
+          <p class="h6">Step 1</p>
+          <p class="h4">Your info</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="number" id="step2" >2</span>
+        <div class="step_number">
+          <p class="h6">Step 2</p>
+          <p class="h4">Select plan</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="number" id="step3">3</span>
+        <div class="step_number">
+          <p class="h6">Step 3</p>
+          <p class="h4">Add-ons</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="number" id="step4">4</span>
+        <div class="step_number">
+          <p class="h6">Step 4</p>
+          <p class="h4">Summary</p>
+        </div>
+      </div>
+    </aside>
+    <!-- Sidebar end --> 
+    <form class="main_container" id="main_container">
+      <!-- page1 start-->
+      <div class="page" id="personal_info">
+        <div class="heading">
+          <h1 class="title">Personal info</h1>
+          <p class="title_description">Please provide your name,email address and phone number.</p>
+        </div>
+        <div class="content">
+          <div class="input_container">
+            <label for="name" class="label">Name</label>
+            <input type="text" name="" id="name" required placeholder="e.g. stefen king">
+          </div>
+          <div class="input_container">
+            <label for="email" class="label">Email Address</label>
+            <input type="text" name="" id="email" required placeholder="e.g. stefenking@lorem.com">
+          </div>
+          <div class="input_container">
+            <label for="phone" class="label">Phone Number</label>
+            <input type="text" name="" id="phone" required placeholder="e.g. +1 455 693 680">
+          </div>
+        </div>
+      </div>
+      <!-- page1 end-->
+      <!-- page2 start-->
+      <div class="page" id="plans">
+        <div class="heading">
+          <h1 class="title">Select your plan</h1>
+          <p class="title_description">You have the option of monthly or yearly billing.</p>
+        </div>
+        <div class="plans">
+          <label for="arcade" class="plan">
+            <img src="./src/images/icon-arcade.svg" alt="">
+            <input type="radio" name="plans" id="arcade" value="arcade">
+            <div>
+              <h4>Advanced</h4>
+              <p>$<span id="arcade_rate"></span></p>
+              <span class="tooltip" >2 months free</span>
+            </div>
+          </label>
+          <label for="advanced" class="plan">
+            <img src="./src/images/icon-advanced.svg" alt="">
+            <input type="radio" name="plans" id="advanced" value="advanced">
+            <div>
+              <h4>Advanced</h4>
+              <p>$<span id="advanced_rate"></span></p>
+              <span class="tooltip" >2 months free</span>
+            </div>
+          </label>
+          <label for="pro" class="plan">
+            <img src="./src/images/icon-pro.svg" alt="">
+            <input type="radio" name="plans" id="pro" value="pro">
+            <div>
+              <h4>Pro</h4>
+              <p>$<span id="pro_rate"></span></p>
+              <span class="tooltip" >2 months free</span>
+            </div>
+          </label>
+        </div>
+        <div class="plan_type">
+          <p class="highlight" id="monthly">Monthly</p>
+          <label for="toggle" class="toggler">
+            <input type="checkbox" name="plan_type" id="toggle">
+            <div class="toggle"></div>
+          </label>
+          <p id="yearly">Yearly</p>
+        </div>
+      </div>
+      <!-- page2 end-->
+      <!-- page3 start-->
+      <div class="page" id="add_ons">
+        <div class="heading">
+          <h1 class="title">Pick add-ons</h1>
+          <p class="title_description">Add-ons help enhance your gaming experience.</p>
+        </div>
+        <div class="add_ons">
+          <label for="online_service" class="add_on">
+            <div class="info">
+              <input type="checkbox" name="addon" id="online_service" value="online service">
+              <div class="background"></div>
+              <div>
+                <h4>Online service</h4>
+                <p>Access to multiplayer games</p>
+              </div>
+            </div>
+            <p class="rate">+$<span id="online_service_rate"></span></p>
+          </label>
+          <label for="storage" class="add_on">
+            <div class="info">
+              <input type="checkbox" name="addon" id="storage" value="larger storage">
+              <div class="background"></div>
+              <div>
+                <h4>Larger storage</h4>
+                <p>Extra 1TB of cloud save</p>
+              </div>
+            </div>
+            <p class="rate">+$<span id="storage_rate"></span></p>
+          </label>
+          <label for="customizable" class="add_on">
+            <div class="info">
+              <input type="checkbox" name="addon" id="customizable" value="customizable profile">
+              <div class="background"></div>
+              <div>
+                <h4>Customizable profile</h4>
+                <p>Customize theme on your profile</p>
+              </div>
+            </div>
+            <p class="rate">+$<span id="customization_rate"></span></p>
+          </label>
+        </div>
+      </div>
+      <!-- page3 end-->
+      <!-- page4 start -->
+      <div class="page" id="summury">
+        <div class="heading">
+          <h1 class="title">Finishing up</h1>
+          <p class="title_description">Double-check everything looks OK before comfirming.</p>
+        </div>
+        <div class="summury">
+          <div class="plan_summury">
+            <div>
+              <h5><span id="plan"></span>(<span class="type"></span>ly)</h5>
+              <button id="change">Change</button>
+            </div>
+            <p class="plan_value" >$<span id="plan_value"></span>/<span class="sub_type"></span></p>
+          </div>
+          <hr>
+          <div class="addonsSummury" id="addons_summury">
+            
+          </div>
+        </div>
+        <div id="total" class="total">
+          <p>Total(per <span class="type"></span>)</p>
+          <h4>+$<span id="total_sum"></span>/<span class="sub_type"></span></h4>
+        </div>
+      </div>
+      <!-- page4 end -->
+      <div class="buttons" id="buttons">
+        <button type="reset" class="back" id="back_btn">Go Back</button>
+        <button type="" class="next" id="next_btn">Next Step</button>
+      </div>
+    </form>
+    <div class="thanks_page" id="thanks_page">
+      <div>
+        <img src="./src/images/icon-thank-you.svg" alt="">
+      <h1>Thank you!</h1>
+      <p>Thanks for confirming your subscription!we hope you have fun using aur platform. If you ever meed support,please feel free to email us at support@loengaming.com.</p>
+      </div>
+    </div>
+  </section>
+  <script src="./src/scripts/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+

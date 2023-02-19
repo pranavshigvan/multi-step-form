@@ -21,6 +21,7 @@ html {
 }
 body {
     width: 100vw;
+    height: 100vh;
     background-color: hsl(217, 100%, 97%);
     font-family: "ubuntu regular";
 
